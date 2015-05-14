@@ -20,7 +20,12 @@ $(call inherit-product, device/samsung/trltespr/full_trltespr.mk)
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Inherit common CM phone.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
-PRODUCT_DEVICE := trltespr
 PRODUCT_NAME := cm_trltespr
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_DEVICE="trltespr" \
+    PRODUCT_NAME="trltespr" \
+    BUILD_FINGERPRINT="samsung/trltespr/trltespr:5.0.1/LRX22C/N910PVPU1BOB7:user/release-keys"
+    PRIVATE_BUILD_DESC="trltespr-user 5.0.1 LRX22C N910PVPU1BOB7 release-keys"
